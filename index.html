@@ -3,6 +3,63 @@
 <title>
 Animated+Beautiful Form
 </title>
+<style>
+	body {padding:100px}
+input {
+		background:none;
+		border:solid 2px #67BCDB;
+		color:#67BCDB;
+		padding:15px 40px;
+		font-size:20px;
+		display:inline-block;
+	}
+input:focus,input:active {
+					
+							outline:none;
+					
+						}	
+	
+input[type="password"],	input[type="email"] {
+		
+										border:none;
+										border-bottom:solid 2px #67BCDB;
+										
+		
+										}
+input[type="submit"]:active {
+		
+								color:white;
+								background:#67BCDB;
+							
+							}
+.form-element	 {
+
+					display:inline-block;
+					margin-right:20px;
+					position:relative;
+
+				}
+.form-element label {
+		position:absolute;
+		top:50%;
+		left:0px;
+		font-family:Georgia,Cambria,"Times New Roman",Times,serif;
+		font-style:italic;
+		font-size:20px;
+		color:#999;
+		transform:translateY(-50%);
+		pointer-events:none;
+		transition: 0.7s;
+		}
+.form-element input {padding:15px 0px;}	
+
+input:focus + label, input.inputvalue + label {top:-10px;
+					 font-size:14px;
+					 color:#aaa;
+			}	
+			
+
+</style>
 <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
 
@@ -23,4 +80,30 @@ Animated+Beautiful Form
       <input type="submit" value="Login">
 		</form>
 	</body>
+	<script>
+		$(document).ready(function(){
+			
+			
+			
+			$(' .form-awesome .form-element input').focusout(function(){
+			
+			var input_val = $(this).val();
+			
+			if(input_val === "")
+			{
+			
+				$(this).removeClass('inputvalue');
+			}
+			
+			else
+			{
+			
+			$(this).addClass('inputvalue');
+			
+			}
+			
+			});
+			
+			});
+	</script>
 </html>
